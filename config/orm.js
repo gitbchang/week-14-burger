@@ -29,9 +29,9 @@ var orm = {
             if(err) throw err;
             cb("New Burger added");
         });
-    },
+    }
     // UPDATE `burger_db`.`burgers` SET `is_eaten`='1' WHERE `burger_id`='4';
-    eaten: function(tableInput, burg, )
+    // eaten: function(tableInput, burg, )
 
 };
 
