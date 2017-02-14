@@ -14,5 +14,12 @@ router.get("/", function(req, res){
     });    
 });
 
+router.post("/", function(req, res){
+    burger.create(req.body.addBurger, function(){
+        res.redirect("/");
+        console.log(res);
+    });
+});
+
 
 module.exports = router;

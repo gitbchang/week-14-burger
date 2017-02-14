@@ -5,6 +5,11 @@ var burger = {
         orm.all("burgers", function(res){
             cb(res);
         });
+    },
+    create: function(val, cb){
+        orm.create(val, function(res){
+            cb(res);
+        });
     }
 }
 

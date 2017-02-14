@@ -12,8 +12,6 @@ app.use(express.static(process.cwd() + "/public"));
 
 app.use(bodyParser.urlencoded({ extended: false }));
 
-// set a static path to the public
-app.use(express.static(path.join(__dirname,'./public')));
 
 // Override with POST having ?_method=DELETE
 app.use(methodOverride("_method"));
@@ -27,6 +25,7 @@ app.set("view engine", "handlebars");
 
 
 // Import routes and give the server access to them.
+// server -> burgerController -> burger.js -> orm.js -> sql db
 var routes = require("./controllers/burgerController.js");
 
 app.use("/", routes);

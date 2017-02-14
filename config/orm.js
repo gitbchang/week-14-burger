@@ -23,8 +23,8 @@ var orm = {
         });
     },
     // INSERT INTO `burger_db`.`burgers` (`burger_name`) VALUES ('veggie');
-    create: function(tableInput, burgerName, cb){
-        var queryString = "INSERT INTO " + tableInput + "(burger_name) VALUES " + burgerName + ";";
+    create: function(burgerName, cb){
+        var queryString = "INSERT INTO burgers(burger_name) VALUES ('"+ burgerName +"');";
         connection.query(queryString, function(err, res){
             if(err) throw err;
             cb("New Burger added");
