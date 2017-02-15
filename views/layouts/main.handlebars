@@ -28,9 +28,18 @@
 //			e.preventDefault();
 //		});
 
-		$(".btn").on("click", function(e){
-			console.log($(this).data("id"));
-		});
+//		$(".btn").on("click", function(e){
+//			console.log($(this).data("id"));
+//		});
+
+		 $('textarea.autocomplete').autocomplete({
+    data: {
+      "Apple": null,
+      "Microsoft": null,
+      "Google": 'http://placehold.it/250x250'
+    },
+    limit: 20, // The max amount of results that can be shown at once. Default: Infinity.
+  });
     });
 </script>
 	{{{ body }}}
