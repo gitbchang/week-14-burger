@@ -15,7 +15,7 @@ function objToSql(ob) {
 
 var orm = {
     all:function(tableInput, cb){
-        var queryString = "SELECT * FROM " + tableInput + ";";
+        var queryString = "SELECT * FROM " + tableInput + " ORDER BY date asc;";
         connection.query(queryString, function(err, res){
             if(err) throw err;
 
@@ -29,9 +29,16 @@ var orm = {
             if(err) throw err;
             cb("New Burger added");
         });
-    }
+    },
     // UPDATE `burger_db`.`burgers` SET `is_eaten`='1' WHERE `burger_id`='4';
     // eaten: function(tableInput, burg, )
+    update: function(burgID, cb){
+        var queryString = "UPDATE burgers SET is_eaten=1 WHERE burger_id="+burgID+";";
+        connection.query(queryString, function(err, res){
+            if(err) throw err;
+            cb("Burger Eaten");
+        });
+    }
 
 };
 

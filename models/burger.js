@@ -10,6 +10,11 @@ var burger = {
         orm.create(val, function(res){
             cb(res);
         });
+    },
+    update: function(val, cb){
+        orm.update(val, function(res){
+            cb(res);
+        });
     }
 }
 

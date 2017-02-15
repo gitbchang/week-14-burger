@@ -23,6 +23,14 @@
         // When dynamically changing the value of a textarea with methods like jQuery's .val(), you must trigger an autoresize on it afterwords because .val() does not automatically trigger the events we've binded to the textarea.
         $('#textarea1').val('New Text');
         $('#textarea1').trigger('autoresize');
+
+//		$("#mainSubmit").on("click", function(e){
+//			e.preventDefault();
+//		});
+
+		$(".btn").on("click", function(e){
+			console.log($(this).data("id"));
+		});
     });
 </script>
 	{{{ body }}}
